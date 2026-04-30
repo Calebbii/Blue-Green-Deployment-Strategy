@@ -25,75 +25,69 @@ This project implements a **Blue-Green Deployment** strategy for a web applicati
 
 ## 📸 Screenshots
 
-### 1. Blue Environment (Current Production)
+### 1. Blue Instance Launched
 ![Blue Environment](./images/Blue%20instance%20launched.png)
 *ALB serving BLUE environment before traffic switch*
 
-### 2. Green Environment (After Switch)
-![Green Environment](./images/Green%20direct%20access.png)
+### 2. Green Instance Launched
+![Green Environment](./images/Green%20instance%20launched.png)
 *ALB serving GREEN environment after successful switch*
+
+### 4. Both Instances Running
+![Instances Running](./images/Both%20instances%20running.png)
+*Both Blue and Green instances in 'running' state*
+
+### 5. Target Groups Created
+![Target Groups](./images/Target%20groups%20created.png)
+*blue-targets and green-targets created in EC2*
 
 ### 3. Target Groups - Healthy Status
 ![Target Groups](./images/Target%20groups%20created.png)
 *Both Blue and Green target groups showing healthy status*
 
-### 4. ALB Listener - Traffic Routing
-![Listener Configuration](./images/ALB%20active.png)
-*ALB listener forwarding traffic to GREEN target group*
+### 6. Blue Target Group - Healthy
+![Blue Healthy](./images/Blue%20target%20group%20-%20healthy.png)
+*Blue target group shows 'healthy' status*
 
-### 5. Application Load Balancer
-![Load Balancer](./images/ALB%20active.png)
-*BlueGreen-ALB configuration and DNS settings*
+### 7. Green Target Group - Healthy
+![Green Healthy](./images/Green%20target%20group%20-%20healthy.png)
+*Green target group shows 'healthy' status after registration*
+
+### 8. ALB Creation Started
+![ALB Creation](./images/ALB%20creation%20started.png)
+*BlueGreen-ALB creation in progress*
+
+### 9. ALB Active
+![ALB Active](./images/ALB%20active.png)
+*Load balancer status: active*
+
+### 10. Blue Response from ALB
+![Blue Response](./images/Blue%20response%20from%20ALB.png)
+*Browser/curl showing BLUE environment (v1.0.0)*
+
+### 11. Green Direct Access
+![Green Direct](./images/Green%20direct%20access.png)
+*Direct access to Green instance showing v2.0.0*
+
+### 12. Listener Before Edit (Blue)
+![Listener Blue](./images/Blue%20response%20from%20ALB.png)
+*ALB listener showing default action: blue-targets*
+
+### 13. Listener After Edit (Green)
+![Listener Green](./images/Green%20direct%20access.png)
+*ALB listener after switch: default action changed to green-targets*
+
+### 14. Green Response from ALB
+![Green Response](./images/Green%20direct%20access.png)
+*ALB showing GREEN environment after successful switch*
 
 ### 6. CloudWatch Alarms
 ![CloudWatch Alarms](./images/CloudWatch%20alarms.png)
 *Monitoring alarms configured for error rate, latency, and health checks*
 
 ### 7. Rollback Demonstration
-![Rollback](screenshots/rollback.png)
+![Rollback](./images/)
 *Successful rollback to BLUE environment*
-
-
-### 1. Security Groups Created
-![Security Groups](./screenshots/1-security-groups.png)
-*ALB-SG and Web-SG security groups configured*
-
-### 2. Blue Instance Launched
-![Blue Instance](./screenshots/2-blue-instance.png)
-*Blue environment instance - Production v1.0.0*
-
-### 3. Green Instance Launched
-![Green Instance](./screenshots/3-green-instance.png)
-*Green environment instance - New version v2.0.0*
-
-### 4. Both Instances Running
-![Instances Running](./screenshots/4-instances-running.png)
-*Both Blue and Green instances in 'running' state*
-
-### 5. Target Groups Created
-![Target Groups](./screenshots/5-target-groups.png)
-*blue-targets and green-targets created in EC2*
-
-### 6. Blue Target Group - Healthy
-![Blue Healthy](./screenshots/6-blue-healthy.png)
-*Blue target group shows 'healthy' status*
-
-### 7. Green Target Group - Healthy
-![Green Healthy](./screenshots/7-green-healthy.png)
-*Green target group shows 'healthy' status after registration*
-
-### 8. ALB Creation Started
-![ALB Creation](./screenshots/8-alb-creation.png)
-*BlueGreen-ALB creation in progress*
-
-### 9. ALB Active
-![ALB Active](./screenshots/9-alb-active.png)
-*Load balancer status: active*
-
-### 10. Blue Response from ALB
-![Blue Response](./screenshots/10-blue-response.png)
-*Browser/curl showing BLUE environment (v1.0.0)*
-
 
 ---
 
